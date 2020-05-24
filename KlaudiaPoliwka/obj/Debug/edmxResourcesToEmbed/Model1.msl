@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sweetModelStoreContainer" CdmEntityContainer="sweetEntities">
+    <EntitySetMapping Name="AspNetRoleClaims">
+      <EntityTypeMapping TypeName="sweetModel.AspNetRoleClaims">
+        <MappingFragment StoreEntitySet="AspNetRoleClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="sweetModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="sweetModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="sweetModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="sweetModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserImie" ColumnName="UserImie" />
+          <ScalarProperty Name="UserNazwisko" ColumnName="UserNazwisko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserTokens">
+      <EntityTypeMapping TypeName="sweetModel.AspNetUserTokens">
+        <MappingFragment StoreEntitySet="AspNetUserTokens">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Biszkopt">
+      <EntityTypeMapping TypeName="sweetModel.Biszkopt">
+        <MappingFragment StoreEntitySet="Biszkopt">
+          <ScalarProperty Name="idBiszkopt" ColumnName="idBiszkopt" />
+          <ScalarProperty Name="idRodzajBiszkoptu" ColumnName="idRodzajBiszkoptu" />
+          <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiszkoptTortu">
+      <EntityTypeMapping TypeName="sweetModel.BiszkoptTortu">
+        <MappingFragment StoreEntitySet="BiszkoptTortu">
+          <ScalarProperty Name="idBiszkopt" ColumnName="idBiszkopt" />
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+          <ScalarProperty Name="idBiszkoptTortu" ColumnName="idBiszkoptTortu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dostawa">
+      <EntityTypeMapping TypeName="sweetModel.Dostawa">
+        <MappingFragment StoreEntitySet="Dostawa">
+          <ScalarProperty Name="idDostawa" ColumnName="idDostawa" />
+          <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+          <ScalarProperty Name="GodzinaOdbioru" ColumnName="GodzinaOdbioru" />
+          <ScalarProperty Name="NrTeleOdbiorcy" ColumnName="NrTeleOdbiorcy" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="NrDomu" ColumnName="NrDomu" />
+          <ScalarProperty Name="NrMieszkania" ColumnName="NrMieszkania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DostawaDoKlienta">
+      <EntityTypeMapping TypeName="sweetModel.DostawaDoKlienta">
+        <MappingFragment StoreEntitySet="DostawaDoKlienta">
+          <ScalarProperty Name="idDostawaDoKlienta" ColumnName="idDostawaDoKlienta" />
+          <ScalarProperty Name="NazwaKlienta" ColumnName="NazwaKlienta" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="TelefonKontaktowy" ColumnName="TelefonKontaktowy" />
+          <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+          <ScalarProperty Name="GodzinaOdbioru" ColumnName="GodzinaOdbioru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DostawaDoPkt">
+      <EntityTypeMapping TypeName="sweetModel.DostawaDoPkt">
+        <MappingFragment StoreEntitySet="DostawaDoPkt">
+          <ScalarProperty Name="idDostawaDoPkt" ColumnName="idDostawaDoPkt" />
+          <ScalarProperty Name="ulica" ColumnName="ulica" />
+          <ScalarProperty Name="nrdomu" ColumnName="nrdomu" />
+          <ScalarProperty Name="nrmieszkania" ColumnName="nrmieszkania" />
+          <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
+          <ScalarProperty Name="nrtelefonu" ColumnName="nrtelefonu" />
+          <ScalarProperty Name="godzinyotwarcia" ColumnName="godzinyotwarcia" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaPlatnosci">
+      <EntityTypeMapping TypeName="sweetModel.FormaPlatnosci">
+        <MappingFragment StoreEntitySet="FormaPlatnosci">
+          <ScalarProperty Name="idFormaPlatnosci" ColumnName="idFormaPlatnosci" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaZaliczki">
+      <EntityTypeMapping TypeName="sweetModel.FormaZaliczki">
+        <MappingFragment StoreEntitySet="FormaZaliczki">
+          <ScalarProperty Name="idFormaZaliczki" ColumnName="idFormaZaliczki" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klient">
+      <EntityTypeMapping TypeName="sweetModel.Klient">
+        <MappingFragment StoreEntitySet="Klient">
+          <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+          <ScalarProperty Name="NazwaFirmy" ColumnName="NazwaFirmy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+          <ScalarProperty Name="NiP" ColumnName="NiP" />
+          <ScalarProperty Name="Osoba" ColumnName="Osoba" />
+          <ScalarProperty Name="NrTelefonuOsoby" ColumnName="NrTelefonuOsoby" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="TypKlienta" ColumnName="TypKlienta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KlientJopia">
+      <EntityTypeMapping TypeName="sweetModel.KlientJopia">
+        <MappingFragment StoreEntitySet="KlientJopia">
+          <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+          <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+          <ScalarProperty Name="MIasto" ColumnName="MIasto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Krem">
+      <EntityTypeMapping TypeName="sweetModel.Krem">
+        <MappingFragment StoreEntitySet="Krem">
+          <ScalarProperty Name="idKrem" ColumnName="idKrem" />
+          <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+          <ScalarProperty Name="idRodzajuKremu" ColumnName="idRodzajuKremu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KremTortu">
+      <EntityTypeMapping TypeName="sweetModel.KremTortu">
+        <MappingFragment StoreEntitySet="KremTortu">
+          <ScalarProperty Name="idKrem" ColumnName="idKrem" />
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+          <ScalarProperty Name="idKremTortu" ColumnName="idKremTortu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ksztalt">
+      <EntityTypeMapping TypeName="sweetModel.Ksztalt">
+        <MappingFragment StoreEntitySet="Ksztalt">
+          <ScalarProperty Name="idKsztalt" ColumnName="idKsztalt" />
+          <ScalarProperty Name="NazwaKsztaltu" ColumnName="NazwaKsztaltu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login">
+      <EntityTypeMapping TypeName="sweetModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="idLogin" ColumnName="idLogin" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RememberMe" ColumnName="RememberMe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logowanie">
+      <EntityTypeMapping TypeName="sweetModel.Logowanie">
+        <MappingFragment StoreEntitySet="Logowanie">
+          <ScalarProperty Name="idLogowanie" ColumnName="idLogowanie" />
+          <ScalarProperty Name="NazwaUzytkownika" ColumnName="NazwaUzytkownika" />
+          <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NazwaStylu">
+      <EntityTypeMapping TypeName="sweetModel.NazwaStylu">
+        <MappingFragment StoreEntitySet="NazwaStylu">
+          <ScalarProperty Name="idStylTortu" ColumnName="idStylTortu" />
+          <ScalarProperty Name="NazwaStylu1" ColumnName="NazwaStylu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pietra">
+      <EntityTypeMapping TypeName="sweetModel.Pietra">
+        <MappingFragment StoreEntitySet="Pietra">
+          <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+          <ScalarProperty Name="idSmak" ColumnName="idSmak" />
+          <ScalarProperty Name="NrPietra" ColumnName="NrPietra" />
+          <ScalarProperty Name="idRodzajBiszkopt" ColumnName="idRodzajBiszkopt" />
+          <ScalarProperty Name="idRodzajKsztaltu" ColumnName="idRodzajKsztaltu" />
+          <ScalarProperty Name="idRodzajRozmiaru" ColumnName="idRodzajRozmiaru" />
+          <ScalarProperty Name="Dodatki" ColumnName="Dodatki" />
+          <ScalarProperty Name="Uwaga" ColumnName="Uwaga" />
+          <ScalarProperty Name="idRodzajKremu" ColumnName="idRodzajKremu" />
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PietraTortu">
+      <EntityTypeMapping TypeName="sweetModel.PietraTortu">
+        <MappingFragment StoreEntitySet="PietraTortu">
+          <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+          <ScalarProperty Name="idPietraTorty" ColumnName="idPietraTorty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platnosc">
+      <EntityTypeMapping TypeName="sweetModel.Platnosc">
+        <MappingFragment StoreEntitySet="Platnosc">
+          <ScalarProperty Name="idPlatnosc" ColumnName="idPlatnosc" />
+          <ScalarProperty Name="KosztTotal" ColumnName="KosztTotal" />
+          <ScalarProperty Name="Zaliczka" ColumnName="Zaliczka" />
+          <ScalarProperty Name="PotwierdzenieZaliczki" ColumnName="PotwierdzenieZaliczki" />
+          <ScalarProperty Name="idFormaZaliczki" ColumnName="idFormaZaliczki" />
+          <ScalarProperty Name="idFormaPlatnosci" ColumnName="idFormaPlatnosci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Praca">
+      <EntityTypeMapping TypeName="sweetModel.Praca">
+        <MappingFragment StoreEntitySet="Praca">
+          <ScalarProperty Name="idPraca" ColumnName="idPraca" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="rodzaj" ColumnName="rodzaj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajBiszkoptu">
+      <EntityTypeMapping TypeName="sweetModel.RodzajBiszkoptu">
+        <MappingFragment StoreEntitySet="RodzajBiszkoptu">
+          <ScalarProperty Name="idRodzajBiszkoptu" ColumnName="idRodzajBiszkoptu" />
+          <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajKremu">
+      <EntityTypeMapping TypeName="sweetModel.RodzajKremu">
+        <MappingFragment StoreEntitySet="RodzajKremu">
+          <ScalarProperty Name="idRodzajKremu" ColumnName="idRodzajKremu" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajKsztaltu">
+      <EntityTypeMapping TypeName="sweetModel.RodzajKsztaltu">
+        <MappingFragment StoreEntitySet="RodzajKsztaltu">
+          <ScalarProperty Name="idRodzajKsztaltu" ColumnName="idRodzajKsztaltu" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajRozmiaru">
+      <EntityTypeMapping TypeName="sweetModel.RodzajRozmiaru">
+        <MappingFragment StoreEntitySet="RodzajRozmiaru">
+          <ScalarProperty Name="idRodzajRozmiaru" ColumnName="idRodzajRozmiaru" />
+          <ScalarProperty Name="liczba" ColumnName="liczba" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RodzajTortu">
+      <EntityTypeMapping TypeName="sweetModel.RodzajTortu">
+        <MappingFragment StoreEntitySet="RodzajTortu">
+          <ScalarProperty Name="idRodzajTortu" ColumnName="idRodzajTortu" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rozmiar">
+      <EntityTypeMapping TypeName="sweetModel.Rozmiar">
+        <MappingFragment StoreEntitySet="Rozmiar">
+          <ScalarProperty Name="idRozmiar" ColumnName="idRozmiar" />
+          <ScalarProperty Name="NazwaRozmiaru" ColumnName="NazwaRozmiaru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmakSet">
+      <EntityTypeMapping TypeName="sweetModel.Smak">
+        <MappingFragment StoreEntitySet="Smak">
+          <ScalarProperty Name="idSmak" ColumnName="idSmak" />
+          <ScalarProperty Name="NazwaSmaku" ColumnName="NazwaSmaku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="sweetModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Torty">
+      <EntityTypeMapping TypeName="sweetModel.Torty">
+        <MappingFragment StoreEntitySet="Torty">
+          <ScalarProperty Name="idRodzajTortu" ColumnName="idRodzajTortu" />
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+          <ScalarProperty Name="GotowoscTortu" ColumnName="GotowoscTortu" />
+          <ScalarProperty Name="idStylTortu" ColumnName="idStylTortu" />
+          <ScalarProperty Name="NapisNa" ColumnName="NapisNa" />
+          <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+          <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TortZamowienie">
+      <EntityTypeMapping TypeName="sweetModel.TortZamowienie">
+        <MappingFragment StoreEntitySet="TortZamowienie">
+          <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+          <ScalarProperty Name="idZamowienie" ColumnName="idZamowienie" />
+          <ScalarProperty Name="idTortZamowienie" ColumnName="idTortZamowienie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zamowienie">
+      <EntityTypeMapping TypeName="sweetModel.Zamowienie">
+        <MappingFragment StoreEntitySet="Zamowienie">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idZamowienie" ColumnName="idZamowienie" />
+          <ScalarProperty Name="PotwOdbioru" ColumnName="PotwOdbioru" />
+          <ScalarProperty Name="ZlecenieRozliczenie" ColumnName="ZlecenieRozliczenie" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="PracPrzyjZam" ColumnName="PracPrzyjZam" />
+          <ScalarProperty Name="idDostawa" ColumnName="idDostawa" />
+          <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+          <ScalarProperty Name="PracWykonalZam" ColumnName="PracWykonalZam" />
+          <ScalarProperty Name="PracWydalZam" ColumnName="PracWydalZam" />
+          <ScalarProperty Name="idDostawaDoPkt" ColumnName="idDostawaDoPkt" />
+          <ScalarProperty Name="idPlatnosci" ColumnName="idPlatnosci" />
+          <ScalarProperty Name="idDostawaDoKlienta" ColumnName="idDostawaDoKlienta" />
+          <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+          <ScalarProperty Name="DataZamowienia" ColumnName="DataZamowienia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="sweetModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

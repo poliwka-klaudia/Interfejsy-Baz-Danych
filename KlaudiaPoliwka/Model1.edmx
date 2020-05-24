@@ -1,0 +1,2051 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sweetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoleClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderDisplayName" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="NormalizedEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="ConcurrencyStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEnd" Type="datetimeoffset" Precision="7" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserImie" Type="varchar" MaxLength="100" />
+          <Property Name="UserNazwisko" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="AspNetUserTokens">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Biszkopt">
+          <Key>
+            <PropertyRef Name="idBiszkopt" />
+          </Key>
+          <Property Name="idBiszkopt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idRodzajBiszkoptu" Type="bigint" />
+          <Property Name="idPietra" Type="bigint" />
+        </EntityType>
+        <EntityType Name="BiszkoptTortu">
+          <Key>
+            <PropertyRef Name="idBiszkopt" />
+            <PropertyRef Name="idTorty" />
+          </Key>
+          <Property Name="idBiszkopt" Type="bigint" Nullable="false" />
+          <Property Name="idTorty" Type="bigint" Nullable="false" />
+          <Property Name="idBiszkoptTortu" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dostawa">
+          <Key>
+            <PropertyRef Name="idDostawa" />
+          </Key>
+          <Property Name="idDostawa" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataOdbioru" Type="date" Nullable="false" />
+          <Property Name="GodzinaOdbioru" Type="datetime" />
+          <Property Name="NrTeleOdbiorcy" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="KodPocztowy" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="Miasto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NrDomu" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NrMieszkania" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DostawaDoKlienta">
+          <Key>
+            <PropertyRef Name="idDostawaDoKlienta" />
+          </Key>
+          <Property Name="idDostawaDoKlienta" Type="bigint" Nullable="false" />
+          <Property Name="NazwaKlienta" Type="varchar" MaxLength="100" />
+          <Property Name="Ulica" Type="varchar" MaxLength="100" />
+          <Property Name="Numer" Type="int" />
+          <Property Name="KodPocztowy" Type="char" MaxLength="6" />
+          <Property Name="Miasto" Type="varchar" MaxLength="100" />
+          <Property Name="TelefonKontaktowy" Type="int" />
+          <Property Name="DataOdbioru" Type="date" />
+          <Property Name="GodzinaOdbioru" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DostawaDoPkt">
+          <Key>
+            <PropertyRef Name="idDostawaDoPkt" />
+          </Key>
+          <Property Name="idDostawaDoPkt" Type="bigint" Nullable="false" />
+          <Property Name="ulica" Type="varchar" MaxLength="100" />
+          <Property Name="nrdomu" Type="varchar" MaxLength="10" />
+          <Property Name="nrmieszkania" Type="varchar" MaxLength="10" />
+          <Property Name="miejscowosc" Type="varchar" MaxLength="100" />
+          <Property Name="nrtelefonu" Type="char" MaxLength="9" />
+          <Property Name="godzinyotwarcia" Type="varchar" MaxLength="50" />
+          <Property Name="nazwa" Type="varchar" MaxLength="100" />
+          <Property Name="kodpocztowy" Type="char" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="FormaPlatnosci">
+          <Key>
+            <PropertyRef Name="idFormaPlatnosci" />
+          </Key>
+          <Property Name="idFormaPlatnosci" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="FormaZaliczki">
+          <Key>
+            <PropertyRef Name="idFormaZaliczki" />
+          </Key>
+          <Property Name="idFormaZaliczki" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaFirmy" Type="varchar" MaxLength="100" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="150" />
+          <Property Name="Imie" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="NrTelefonu" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="NiP" Type="nchar" MaxLength="13" />
+          <Property Name="Osoba" Type="varchar" MaxLength="100" />
+          <Property Name="NrTelefonuOsoby" Type="char" MaxLength="9" />
+          <Property Name="Ulica" Type="varchar" MaxLength="100" />
+          <Property Name="Numer" Type="nchar" MaxLength="10" />
+          <Property Name="KodPocztowy" Type="char" MaxLength="6" />
+          <Property Name="Miasto" Type="varchar" MaxLength="100" />
+          <Property Name="TypKlienta" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="KlientJopia">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="150" />
+          <Property Name="Imie" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="NrTelefonu" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="100" />
+          <Property Name="Numer" Type="nchar" MaxLength="10" />
+          <Property Name="KodPocztowy" Type="char" MaxLength="6" />
+          <Property Name="MIasto" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Krem">
+          <Key>
+            <PropertyRef Name="idKrem" />
+          </Key>
+          <Property Name="idKrem" Type="bigint" Nullable="false" />
+          <Property Name="idPietra" Type="bigint" />
+          <Property Name="idRodzajuKremu" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KremTortu">
+          <Key>
+            <PropertyRef Name="idKremTortu" />
+          </Key>
+          <Property Name="idKrem" Type="bigint" Nullable="false" />
+          <Property Name="idTorty" Type="bigint" Nullable="false" />
+          <Property Name="idKremTortu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ksztalt">
+          <Key>
+            <PropertyRef Name="idKsztalt" />
+          </Key>
+          <Property Name="idKsztalt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaKsztaltu" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="idLogin" />
+          </Key>
+          <Property Name="idLogin" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RememberMe" Type="bit" />
+        </EntityType>
+        <EntityType Name="Logowanie">
+          <Key>
+            <PropertyRef Name="idLogowanie" />
+          </Key>
+          <Property Name="idLogowanie" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaUzytkownika" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Haslo" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NazwaStylu">
+          <Key>
+            <PropertyRef Name="idStylTortu" />
+          </Key>
+          <Property Name="idStylTortu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaStylu" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Pietra">
+          <Key>
+            <PropertyRef Name="idPietra" />
+          </Key>
+          <Property Name="idPietra" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idSmak" Type="bigint" />
+          <Property Name="NrPietra" Type="int" />
+          <Property Name="idRodzajBiszkopt" Type="bigint" />
+          <Property Name="idRodzajKsztaltu" Type="bigint" />
+          <Property Name="idRodzajRozmiaru" Type="bigint" />
+          <Property Name="Dodatki" Type="varchar" MaxLength="250" />
+          <Property Name="Uwaga" Type="varchar" MaxLength="500" />
+          <Property Name="idRodzajKremu" Type="bigint" />
+          <Property Name="idTorty" Type="bigint" />
+        </EntityType>
+        <EntityType Name="PietraTortu">
+          <Key>
+            <PropertyRef Name="idPietraTorty" />
+          </Key>
+          <Property Name="idPietra" Type="bigint" Nullable="false" />
+          <Property Name="idTorty" Type="bigint" Nullable="false" />
+          <Property Name="idPietraTorty" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Platnosc">
+          <Key>
+            <PropertyRef Name="idPlatnosc" />
+          </Key>
+          <Property Name="idPlatnosc" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KosztTotal" Type="money" />
+          <Property Name="Zaliczka" Type="money" />
+          <Property Name="PotwierdzenieZaliczki" Type="bit" />
+          <Property Name="idFormaZaliczki" Type="bigint" />
+          <Property Name="idFormaPlatnosci" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Praca">
+          <Key>
+            <PropertyRef Name="idPraca" />
+          </Key>
+          <Property Name="idPraca" Type="bigint" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="50" />
+          <Property Name="rodzaj" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RodzajBiszkoptu">
+          <Key>
+            <PropertyRef Name="idRodzajBiszkoptu" />
+          </Key>
+          <Property Name="idRodzajBiszkoptu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rodzaj" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="RodzajKremu">
+          <Key>
+            <PropertyRef Name="idRodzajKremu" />
+          </Key>
+          <Property Name="idRodzajKremu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RodzajKsztaltu">
+          <Key>
+            <PropertyRef Name="idRodzajKsztaltu" />
+          </Key>
+          <Property Name="idRodzajKsztaltu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RodzajRozmiaru">
+          <Key>
+            <PropertyRef Name="idRodzajRozmiaru" />
+          </Key>
+          <Property Name="idRodzajRozmiaru" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="liczba" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="RodzajTortu">
+          <Key>
+            <PropertyRef Name="idRodzajTortu" />
+          </Key>
+          <Property Name="idRodzajTortu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Rozmiar">
+          <Key>
+            <PropertyRef Name="idRozmiar" />
+          </Key>
+          <Property Name="idRozmiar" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaRozmiaru" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Smak">
+          <Key>
+            <PropertyRef Name="idSmak" />
+          </Key>
+          <Property Name="idSmak" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazwaSmaku" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Torty">
+          <Key>
+            <PropertyRef Name="idTorty" />
+          </Key>
+          <Property Name="idRodzajTortu" Type="bigint" />
+          <Property Name="idTorty" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GotowoscTortu" Type="bit" Nullable="false" />
+          <Property Name="idStylTortu" Type="bigint" />
+          <Property Name="NapisNa" Type="varchar" MaxLength="300" />
+          <Property Name="Zdjecie" Type="nchar" MaxLength="100" />
+          <Property Name="idPietra" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TortZamowienie">
+          <Key>
+            <PropertyRef Name="idTortZamowienie" />
+          </Key>
+          <Property Name="idTorty" Type="bigint" Nullable="false" />
+          <Property Name="idZamowienie" Type="bigint" Nullable="false" />
+          <Property Name="idTortZamowienie" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zamowienie">
+          <Key>
+            <PropertyRef Name="idZamowienie" />
+          </Key>
+          <Property Name="idUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="idZamowienie" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PotwOdbioru" Type="bit" Nullable="false" />
+          <Property Name="ZlecenieRozliczenie" Type="bit" Nullable="false" />
+          <Property Name="Uwagi" Type="varchar" MaxLength="1000" />
+          <Property Name="PracPrzyjZam" Type="bit" Nullable="false" />
+          <Property Name="idDostawa" Type="bigint" />
+          <Property Name="idKlient" Type="bigint" />
+          <Property Name="PracWykonalZam" Type="bit" Nullable="false" />
+          <Property Name="PracWydalZam" Type="bit" Nullable="false" />
+          <Property Name="idDostawaDoPkt" Type="bigint" />
+          <Property Name="idPlatnosci" Type="bigint" />
+          <Property Name="idDostawaDoKlienta" Type="bigint" />
+          <Property Name="DataOdbioru" Type="date" />
+          <Property Name="DataZamowienia" Type="date" />
+        </EntityType>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaims">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserTokens_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserTokens" Type="Self.AspNetUserTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biszkopt_Pietra">
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="0..1" />
+          <End Role="Biszkopt" Type="Self.Biszkopt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pietra">
+              <PropertyRef Name="idPietra" />
+            </Principal>
+            <Dependent Role="Biszkopt">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biszkopt_RodzajBiszkoptu">
+          <End Role="RodzajBiszkoptu" Type="Self.RodzajBiszkoptu" Multiplicity="0..1" />
+          <End Role="Biszkopt" Type="Self.Biszkopt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajBiszkoptu">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Principal>
+            <Dependent Role="Biszkopt">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciasta_RodzajCiasta">
+          <End Role="RodzajTortu" Type="Self.RodzajTortu" Multiplicity="0..1" />
+          <End Role="Torty" Type="Self.Torty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajTortu">
+              <PropertyRef Name="idRodzajTortu" />
+            </Principal>
+            <Dependent Role="Torty">
+              <PropertyRef Name="idRodzajTortu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajKremu">
+          <End Role="RodzajKremu" Type="Self.RodzajKremu" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajKremu">
+              <PropertyRef Name="idRodzajKremu" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajKremu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajKsztaltu">
+          <End Role="RodzajKsztaltu" Type="Self.RodzajKsztaltu" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajKsztaltu">
+              <PropertyRef Name="idRodzajKsztaltu" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajKsztaltu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajRozmiaru">
+          <End Role="RodzajRozmiaru" Type="Self.RodzajRozmiaru" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajRozmiaru">
+              <PropertyRef Name="idRodzajRozmiaru" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajRozmiaru" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Platnosc_FormaPlatnosci">
+          <End Role="FormaPlatnosci" Type="Self.FormaPlatnosci" Multiplicity="0..1" />
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaPlatnosci">
+              <PropertyRef Name="idFormaPlatnosci" />
+            </Principal>
+            <Dependent Role="Platnosc">
+              <PropertyRef Name="idFormaPlatnosci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Platnosc_FormaZaliczki">
+          <End Role="FormaZaliczki" Type="Self.FormaZaliczki" Multiplicity="0..1" />
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaZaliczki">
+              <PropertyRef Name="idFormaZaliczki" />
+            </Principal>
+            <Dependent Role="Platnosc">
+              <PropertyRef Name="idFormaZaliczki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Torty_NazwaStylu">
+          <End Role="NazwaStylu" Type="Self.NazwaStylu" Multiplicity="0..1" />
+          <End Role="Torty" Type="Self.Torty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NazwaStylu">
+              <PropertyRef Name="idStylTortu" />
+            </Principal>
+            <Dependent Role="Torty">
+              <PropertyRef Name="idStylTortu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TortZamowienie_Torty">
+          <End Role="Torty" Type="Self.Torty" Multiplicity="1" />
+          <End Role="TortZamowienie" Type="Self.TortZamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Torty">
+              <PropertyRef Name="idTorty" />
+            </Principal>
+            <Dependent Role="TortZamowienie">
+              <PropertyRef Name="idTorty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TortZamowienie_Zamowienie">
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="1" />
+          <End Role="TortZamowienie" Type="Self.TortZamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienie">
+              <PropertyRef Name="idZamowienie" />
+            </Principal>
+            <Dependent Role="TortZamowienie">
+              <PropertyRef Name="idZamowienie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Dostawa1">
+          <End Role="Dostawa" Type="Self.Dostawa" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dostawa">
+              <PropertyRef Name="idDostawa" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_DostawaDoKlienta">
+          <End Role="DostawaDoKlienta" Type="Self.DostawaDoKlienta" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DostawaDoKlienta">
+              <PropertyRef Name="idDostawaDoKlienta" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawaDoKlienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_DostawaDoPkt">
+          <End Role="DostawaDoPkt" Type="Self.DostawaDoPkt" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DostawaDoPkt">
+              <PropertyRef Name="idDostawaDoPkt" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawaDoPkt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Klient">
+          <End Role="Klient" Type="Self.Klient" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klient">
+              <PropertyRef Name="idKlient" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idKlient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Platnosc">
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="0..1" />
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Platnosc">
+              <PropertyRef Name="idPlatnosc" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idPlatnosci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sweetModelStoreContainer">
+          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Biszkopt" EntityType="Self.Biszkopt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BiszkoptTortu" EntityType="Self.BiszkoptTortu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dostawa" EntityType="Self.Dostawa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DostawaDoKlienta" EntityType="Self.DostawaDoKlienta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DostawaDoPkt" EntityType="Self.DostawaDoPkt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormaPlatnosci" EntityType="Self.FormaPlatnosci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormaZaliczki" EntityType="Self.FormaZaliczki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KlientJopia" EntityType="Self.KlientJopia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Krem" EntityType="Self.Krem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KremTortu" EntityType="Self.KremTortu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ksztalt" EntityType="Self.Ksztalt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logowanie" EntityType="Self.Logowanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NazwaStylu" EntityType="Self.NazwaStylu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pietra" EntityType="Self.Pietra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PietraTortu" EntityType="Self.PietraTortu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Platnosc" EntityType="Self.Platnosc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Praca" EntityType="Self.Praca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajBiszkoptu" EntityType="Self.RodzajBiszkoptu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajKremu" EntityType="Self.RodzajKremu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajKsztaltu" EntityType="Self.RodzajKsztaltu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajRozmiaru" EntityType="Self.RodzajRozmiaru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RodzajTortu" EntityType="Self.RodzajTortu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rozmiar" EntityType="Self.Rozmiar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Smak" EntityType="Self.Smak" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Torty" EntityType="Self.Torty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TortZamowienie" EntityType="Self.TortZamowienie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles_RoleId" Association="Self.FK_AspNetUserRoles_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers_UserId" Association="Self.FK_AspNetUserRoles_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserTokens_AspNetUsers_UserId" Association="Self.FK_AspNetUserTokens_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biszkopt_Pietra" Association="Self.FK_Biszkopt_Pietra">
+            <End Role="Pietra" EntitySet="Pietra" />
+            <End Role="Biszkopt" EntitySet="Biszkopt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biszkopt_RodzajBiszkoptu" Association="Self.FK_Biszkopt_RodzajBiszkoptu">
+            <End Role="RodzajBiszkoptu" EntitySet="RodzajBiszkoptu" />
+            <End Role="Biszkopt" EntitySet="Biszkopt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciasta_RodzajCiasta" Association="Self.FK_Ciasta_RodzajCiasta">
+            <End Role="RodzajTortu" EntitySet="RodzajTortu" />
+            <End Role="Torty" EntitySet="Torty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajKremu" Association="Self.FK_Pietra_RodzajKremu">
+            <End Role="RodzajKremu" EntitySet="RodzajKremu" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajKsztaltu" Association="Self.FK_Pietra_RodzajKsztaltu">
+            <End Role="RodzajKsztaltu" EntitySet="RodzajKsztaltu" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajRozmiaru" Association="Self.FK_Pietra_RodzajRozmiaru">
+            <End Role="RodzajRozmiaru" EntitySet="RodzajRozmiaru" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Platnosc_FormaPlatnosci" Association="Self.FK_Platnosc_FormaPlatnosci">
+            <End Role="FormaPlatnosci" EntitySet="FormaPlatnosci" />
+            <End Role="Platnosc" EntitySet="Platnosc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Platnosc_FormaZaliczki" Association="Self.FK_Platnosc_FormaZaliczki">
+            <End Role="FormaZaliczki" EntitySet="FormaZaliczki" />
+            <End Role="Platnosc" EntitySet="Platnosc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Torty_NazwaStylu" Association="Self.FK_Torty_NazwaStylu">
+            <End Role="NazwaStylu" EntitySet="NazwaStylu" />
+            <End Role="Torty" EntitySet="Torty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TortZamowienie_Torty" Association="Self.FK_TortZamowienie_Torty">
+            <End Role="Torty" EntitySet="Torty" />
+            <End Role="TortZamowienie" EntitySet="TortZamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TortZamowienie_Zamowienie" Association="Self.FK_TortZamowienie_Zamowienie">
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+            <End Role="TortZamowienie" EntitySet="TortZamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_AspNetUsers" Association="Self.FK_Zamowienie_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Dostawa1" Association="Self.FK_Zamowienie_Dostawa1">
+            <End Role="Dostawa" EntitySet="Dostawa" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_DostawaDoKlienta" Association="Self.FK_Zamowienie_DostawaDoKlienta">
+            <End Role="DostawaDoKlienta" EntitySet="DostawaDoKlienta" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_DostawaDoPkt" Association="Self.FK_Zamowienie_DostawaDoPkt">
+            <End Role="DostawaDoPkt" EntitySet="DostawaDoPkt" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
+            <End Role="Klient" EntitySet="Klient" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Platnosc" Association="Self.FK_Zamowienie_Platnosc">
+            <End Role="Platnosc" EntitySet="Platnosc" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sweetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRoleClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoleClaims" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetRoleClaims" Relationship="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId" FromRole="AspNetRoles" ToRole="AspNetRoleClaims" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NormalizedEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ConcurrencyStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEnd" Type="DateTimeOffset" Precision="7" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserImie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserNazwisko" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_AspNetUserClaims_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_AspNetUserLogins_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetUserTokens" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserTokens" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_AspNetUsers" FromRole="AspNetUsers" ToRole="Zamowienie" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="AspNetUserTokens">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_AspNetUserTokens_AspNetUsers_UserId" FromRole="AspNetUserTokens" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="Biszkopt">
+          <Key>
+            <PropertyRef Name="idBiszkopt" />
+          </Key>
+          <Property Name="idBiszkopt" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idRodzajBiszkoptu" Type="Int64" />
+          <Property Name="idPietra" Type="Int64" />
+          <NavigationProperty Name="Pietra" Relationship="Self.FK_Biszkopt_Pietra" FromRole="Biszkopt" ToRole="Pietra" />
+          <NavigationProperty Name="RodzajBiszkoptu" Relationship="Self.FK_Biszkopt_RodzajBiszkoptu" FromRole="Biszkopt" ToRole="RodzajBiszkoptu" />
+        </EntityType>
+        <EntityType Name="BiszkoptTortu">
+          <Key>
+            <PropertyRef Name="idBiszkopt" />
+            <PropertyRef Name="idTorty" />
+          </Key>
+          <Property Name="idBiszkopt" Type="Int64" Nullable="false" />
+          <Property Name="idTorty" Type="Int64" Nullable="false" />
+          <Property Name="idBiszkoptTortu" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dostawa">
+          <Key>
+            <PropertyRef Name="idDostawa" />
+          </Key>
+          <Property Name="idDostawa" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataOdbioru" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GodzinaOdbioru" Type="DateTime" Precision="3" />
+          <Property Name="NrTeleOdbiorcy" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KodPocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Miasto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrDomu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrMieszkania" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_Dostawa1" FromRole="Dostawa" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="DostawaDoKlienta">
+          <Key>
+            <PropertyRef Name="idDostawaDoKlienta" />
+          </Key>
+          <Property Name="idDostawaDoKlienta" Type="Int64" Nullable="false" />
+          <Property Name="NazwaKlienta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ulica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numer" Type="Int32" />
+          <Property Name="KodPocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Miasto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelefonKontaktowy" Type="Int32" />
+          <Property Name="DataOdbioru" Type="DateTime" Precision="0" />
+          <Property Name="GodzinaOdbioru" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_DostawaDoKlienta" FromRole="DostawaDoKlienta" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="DostawaDoPkt">
+          <Key>
+            <PropertyRef Name="idDostawaDoPkt" />
+          </Key>
+          <Property Name="idDostawaDoPkt" Type="Int64" Nullable="false" />
+          <Property Name="ulica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nrdomu" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="nrmieszkania" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="miejscowosc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nrtelefonu" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="godzinyotwarcia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="kodpocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_DostawaDoPkt" FromRole="DostawaDoPkt" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="FormaPlatnosci">
+          <Key>
+            <PropertyRef Name="idFormaPlatnosci" />
+          </Key>
+          <Property Name="idFormaPlatnosci" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Platnosc" Relationship="Self.FK_Platnosc_FormaPlatnosci" FromRole="FormaPlatnosci" ToRole="Platnosc" />
+        </EntityType>
+        <EntityType Name="FormaZaliczki">
+          <Key>
+            <PropertyRef Name="idFormaZaliczki" />
+          </Key>
+          <Property Name="idFormaZaliczki" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Platnosc" Relationship="Self.FK_Platnosc_FormaZaliczki" FromRole="FormaZaliczki" ToRole="Platnosc" />
+        </EntityType>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaFirmy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Imie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NrTelefonu" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NiP" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Osoba" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NrTelefonuOsoby" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="Ulica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="KodPocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="Miasto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TypKlienta" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_Klient" FromRole="Klient" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="KlientJopia">
+          <Key>
+            <PropertyRef Name="idKlient" />
+          </Key>
+          <Property Name="idKlient" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwisko" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Imie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NrTelefonu" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Numer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="KodPocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="MIasto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Krem">
+          <Key>
+            <PropertyRef Name="idKrem" />
+          </Key>
+          <Property Name="idKrem" Type="Int64" Nullable="false" />
+          <Property Name="idPietra" Type="Int64" />
+          <Property Name="idRodzajuKremu" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KremTortu">
+          <Key>
+            <PropertyRef Name="idKremTortu" />
+          </Key>
+          <Property Name="idKrem" Type="Int64" Nullable="false" />
+          <Property Name="idTorty" Type="Int64" Nullable="false" />
+          <Property Name="idKremTortu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Ksztalt">
+          <Key>
+            <PropertyRef Name="idKsztalt" />
+          </Key>
+          <Property Name="idKsztalt" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaKsztaltu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="idLogin" />
+          </Key>
+          <Property Name="idLogin" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RememberMe" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Logowanie">
+          <Key>
+            <PropertyRef Name="idLogowanie" />
+          </Key>
+          <Property Name="idLogowanie" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaUzytkownika" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haslo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NazwaStylu">
+          <Key>
+            <PropertyRef Name="idStylTortu" />
+          </Key>
+          <Property Name="idStylTortu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaStylu1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Torty" Relationship="Self.FK_Torty_NazwaStylu" FromRole="NazwaStylu" ToRole="Torty" />
+        </EntityType>
+        <EntityType Name="Pietra">
+          <Key>
+            <PropertyRef Name="idPietra" />
+          </Key>
+          <Property Name="idPietra" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idSmak" Type="Int64" />
+          <Property Name="NrPietra" Type="Int32" />
+          <Property Name="idRodzajBiszkopt" Type="Int64" />
+          <Property Name="idRodzajKsztaltu" Type="Int64" />
+          <Property Name="idRodzajRozmiaru" Type="Int64" />
+          <Property Name="Dodatki" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Uwaga" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="idRodzajKremu" Type="Int64" />
+          <Property Name="idTorty" Type="Int64" />
+          <NavigationProperty Name="Biszkopt" Relationship="Self.FK_Biszkopt_Pietra" FromRole="Pietra" ToRole="Biszkopt" />
+          <NavigationProperty Name="RodzajKremu" Relationship="Self.FK_Pietra_RodzajKremu" FromRole="Pietra" ToRole="RodzajKremu" />
+          <NavigationProperty Name="RodzajKsztaltu" Relationship="Self.FK_Pietra_RodzajKsztaltu" FromRole="Pietra" ToRole="RodzajKsztaltu" />
+          <NavigationProperty Name="RodzajRozmiaru" Relationship="Self.FK_Pietra_RodzajRozmiaru" FromRole="Pietra" ToRole="RodzajRozmiaru" />
+        </EntityType>
+        <EntityType Name="PietraTortu">
+          <Key>
+            <PropertyRef Name="idPietraTorty" />
+          </Key>
+          <Property Name="idPietra" Type="Int64" Nullable="false" />
+          <Property Name="idTorty" Type="Int64" Nullable="false" />
+          <Property Name="idPietraTorty" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Platnosc">
+          <Key>
+            <PropertyRef Name="idPlatnosc" />
+          </Key>
+          <Property Name="idPlatnosc" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KosztTotal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zaliczka" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PotwierdzenieZaliczki" Type="Boolean" />
+          <Property Name="idFormaZaliczki" Type="Int64" />
+          <Property Name="idFormaPlatnosci" Type="Int64" />
+          <NavigationProperty Name="FormaPlatnosci" Relationship="Self.FK_Platnosc_FormaPlatnosci" FromRole="Platnosc" ToRole="FormaPlatnosci" />
+          <NavigationProperty Name="FormaZaliczki" Relationship="Self.FK_Platnosc_FormaZaliczki" FromRole="Platnosc" ToRole="FormaZaliczki" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_Zamowienie_Platnosc" FromRole="Platnosc" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="Praca">
+          <Key>
+            <PropertyRef Name="idPraca" />
+          </Key>
+          <Property Name="idPraca" Type="Int64" Nullable="false" />
+          <Property Name="nazwa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rodzaj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RodzajBiszkoptu">
+          <Key>
+            <PropertyRef Name="idRodzajBiszkoptu" />
+          </Key>
+          <Property Name="idRodzajBiszkoptu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rodzaj" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Biszkopt" Relationship="Self.FK_Biszkopt_RodzajBiszkoptu" FromRole="RodzajBiszkoptu" ToRole="Biszkopt" />
+        </EntityType>
+        <EntityType Name="RodzajKremu">
+          <Key>
+            <PropertyRef Name="idRodzajKremu" />
+          </Key>
+          <Property Name="idRodzajKremu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pietra" Relationship="Self.FK_Pietra_RodzajKremu" FromRole="RodzajKremu" ToRole="Pietra" />
+        </EntityType>
+        <EntityType Name="RodzajKsztaltu">
+          <Key>
+            <PropertyRef Name="idRodzajKsztaltu" />
+          </Key>
+          <Property Name="idRodzajKsztaltu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Pietra" Relationship="Self.FK_Pietra_RodzajKsztaltu" FromRole="RodzajKsztaltu" ToRole="Pietra" />
+        </EntityType>
+        <EntityType Name="RodzajRozmiaru">
+          <Key>
+            <PropertyRef Name="idRodzajRozmiaru" />
+          </Key>
+          <Property Name="idRodzajRozmiaru" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="liczba" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Pietra" Relationship="Self.FK_Pietra_RodzajRozmiaru" FromRole="RodzajRozmiaru" ToRole="Pietra" />
+        </EntityType>
+        <EntityType Name="RodzajTortu">
+          <Key>
+            <PropertyRef Name="idRodzajTortu" />
+          </Key>
+          <Property Name="idRodzajTortu" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Torty" Relationship="Self.FK_Ciasta_RodzajCiasta" FromRole="RodzajTortu" ToRole="Torty" />
+        </EntityType>
+        <EntityType Name="Rozmiar">
+          <Key>
+            <PropertyRef Name="idRozmiar" />
+          </Key>
+          <Property Name="idRozmiar" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaRozmiaru" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Smak">
+          <Key>
+            <PropertyRef Name="idSmak" />
+          </Key>
+          <Property Name="idSmak" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazwaSmaku" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Torty">
+          <Key>
+            <PropertyRef Name="idTorty" />
+          </Key>
+          <Property Name="idRodzajTortu" Type="Int64" />
+          <Property Name="idTorty" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GotowoscTortu" Type="Boolean" Nullable="false" />
+          <Property Name="idStylTortu" Type="Int64" />
+          <Property Name="NapisNa" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Zdjecie" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="idPietra" Type="Int64" />
+          <NavigationProperty Name="NazwaStylu" Relationship="Self.FK_Torty_NazwaStylu" FromRole="Torty" ToRole="NazwaStylu" />
+          <NavigationProperty Name="RodzajTortu" Relationship="Self.FK_Ciasta_RodzajCiasta" FromRole="Torty" ToRole="RodzajTortu" />
+          <NavigationProperty Name="TortZamowienie" Relationship="Self.FK_TortZamowienie_Torty" FromRole="Torty" ToRole="TortZamowienie" />
+        </EntityType>
+        <EntityType Name="TortZamowienie">
+          <Key>
+            <PropertyRef Name="idTortZamowienie" />
+          </Key>
+          <Property Name="idTorty" Type="Int64" Nullable="false" />
+          <Property Name="idZamowienie" Type="Int64" Nullable="false" />
+          <Property Name="idTortZamowienie" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Torty" Relationship="Self.FK_TortZamowienie_Torty" FromRole="TortZamowienie" ToRole="Torty" />
+          <NavigationProperty Name="Zamowienie" Relationship="Self.FK_TortZamowienie_Zamowienie" FromRole="TortZamowienie" ToRole="Zamowienie" />
+        </EntityType>
+        <EntityType Name="Zamowienie">
+          <Key>
+            <PropertyRef Name="idZamowienie" />
+          </Key>
+          <Property Name="idUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idZamowienie" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PotwOdbioru" Type="Boolean" Nullable="false" />
+          <Property Name="ZlecenieRozliczenie" Type="Boolean" Nullable="false" />
+          <Property Name="Uwagi" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PracPrzyjZam" Type="Boolean" Nullable="false" />
+          <Property Name="idDostawa" Type="Int64" />
+          <Property Name="idKlient" Type="Int64" />
+          <Property Name="PracWykonalZam" Type="Boolean" Nullable="false" />
+          <Property Name="PracWydalZam" Type="Boolean" Nullable="false" />
+          <Property Name="idDostawaDoPkt" Type="Int64" />
+          <Property Name="idPlatnosci" Type="Int64" />
+          <Property Name="idDostawaDoKlienta" Type="Int64" />
+          <Property Name="DataOdbioru" Type="DateTime" Precision="0" />
+          <Property Name="DataZamowienia" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_Zamowienie_AspNetUsers" FromRole="Zamowienie" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Dostawa" Relationship="Self.FK_Zamowienie_Dostawa1" FromRole="Zamowienie" ToRole="Dostawa" />
+          <NavigationProperty Name="DostawaDoKlienta" Relationship="Self.FK_Zamowienie_DostawaDoKlienta" FromRole="Zamowienie" ToRole="DostawaDoKlienta" />
+          <NavigationProperty Name="DostawaDoPkt" Relationship="Self.FK_Zamowienie_DostawaDoPkt" FromRole="Zamowienie" ToRole="DostawaDoPkt" />
+          <NavigationProperty Name="Klient" Relationship="Self.FK_Zamowienie_Klient" FromRole="Zamowienie" ToRole="Klient" />
+          <NavigationProperty Name="Platnosc" Relationship="Self.FK_Zamowienie_Platnosc" FromRole="Zamowienie" ToRole="Platnosc" />
+          <NavigationProperty Name="TortZamowienie" Relationship="Self.FK_TortZamowienie_Zamowienie" FromRole="Zamowienie" ToRole="TortZamowienie" />
+        </EntityType>
+        <Association Name="FK_AspNetRoleClaims_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetRoleClaims" Type="Self.AspNetRoleClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetRoleClaims">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserLogins_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserTokens_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserTokens" Type="Self.AspNetUserTokens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserTokens">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biszkopt_Pietra">
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="0..1" />
+          <End Role="Biszkopt" Type="Self.Biszkopt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pietra">
+              <PropertyRef Name="idPietra" />
+            </Principal>
+            <Dependent Role="Biszkopt">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Biszkopt_RodzajBiszkoptu">
+          <End Role="RodzajBiszkoptu" Type="Self.RodzajBiszkoptu" Multiplicity="0..1" />
+          <End Role="Biszkopt" Type="Self.Biszkopt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajBiszkoptu">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Principal>
+            <Dependent Role="Biszkopt">
+              <PropertyRef Name="idRodzajBiszkoptu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Dostawa1">
+          <End Role="Dostawa" Type="Self.Dostawa" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dostawa">
+              <PropertyRef Name="idDostawa" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_DostawaDoKlienta">
+          <End Role="DostawaDoKlienta" Type="Self.DostawaDoKlienta" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DostawaDoKlienta">
+              <PropertyRef Name="idDostawaDoKlienta" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawaDoKlienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_DostawaDoPkt">
+          <End Role="DostawaDoPkt" Type="Self.DostawaDoPkt" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DostawaDoPkt">
+              <PropertyRef Name="idDostawaDoPkt" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idDostawaDoPkt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Platnosc_FormaPlatnosci">
+          <End Role="FormaPlatnosci" Type="Self.FormaPlatnosci" Multiplicity="0..1" />
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaPlatnosci">
+              <PropertyRef Name="idFormaPlatnosci" />
+            </Principal>
+            <Dependent Role="Platnosc">
+              <PropertyRef Name="idFormaPlatnosci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Platnosc_FormaZaliczki">
+          <End Role="FormaZaliczki" Type="Self.FormaZaliczki" Multiplicity="0..1" />
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormaZaliczki">
+              <PropertyRef Name="idFormaZaliczki" />
+            </Principal>
+            <Dependent Role="Platnosc">
+              <PropertyRef Name="idFormaZaliczki" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Klient">
+          <End Role="Klient" Type="Self.Klient" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klient">
+              <PropertyRef Name="idKlient" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idKlient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Torty_NazwaStylu">
+          <End Role="NazwaStylu" Type="Self.NazwaStylu" Multiplicity="0..1" />
+          <End Role="Torty" Type="Self.Torty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NazwaStylu">
+              <PropertyRef Name="idStylTortu" />
+            </Principal>
+            <Dependent Role="Torty">
+              <PropertyRef Name="idStylTortu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajKremu">
+          <End Role="RodzajKremu" Type="Self.RodzajKremu" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajKremu">
+              <PropertyRef Name="idRodzajKremu" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajKremu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajKsztaltu">
+          <End Role="RodzajKsztaltu" Type="Self.RodzajKsztaltu" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajKsztaltu">
+              <PropertyRef Name="idRodzajKsztaltu" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajKsztaltu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pietra_RodzajRozmiaru">
+          <End Role="RodzajRozmiaru" Type="Self.RodzajRozmiaru" Multiplicity="0..1" />
+          <End Role="Pietra" Type="Self.Pietra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajRozmiaru">
+              <PropertyRef Name="idRodzajRozmiaru" />
+            </Principal>
+            <Dependent Role="Pietra">
+              <PropertyRef Name="idRodzajRozmiaru" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Zamowienie_Platnosc">
+          <End Role="Platnosc" Type="Self.Platnosc" Multiplicity="0..1" />
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Platnosc">
+              <PropertyRef Name="idPlatnosc" />
+            </Principal>
+            <Dependent Role="Zamowienie">
+              <PropertyRef Name="idPlatnosci" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciasta_RodzajCiasta">
+          <End Role="RodzajTortu" Type="Self.RodzajTortu" Multiplicity="0..1" />
+          <End Role="Torty" Type="Self.Torty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RodzajTortu">
+              <PropertyRef Name="idRodzajTortu" />
+            </Principal>
+            <Dependent Role="Torty">
+              <PropertyRef Name="idRodzajTortu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TortZamowienie_Torty">
+          <End Role="Torty" Type="Self.Torty" Multiplicity="1" />
+          <End Role="TortZamowienie" Type="Self.TortZamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Torty">
+              <PropertyRef Name="idTorty" />
+            </Principal>
+            <Dependent Role="TortZamowienie">
+              <PropertyRef Name="idTorty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TortZamowienie_Zamowienie">
+          <End Role="Zamowienie" Type="Self.Zamowienie" Multiplicity="1" />
+          <End Role="TortZamowienie" Type="Self.TortZamowienie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zamowienie">
+              <PropertyRef Name="idZamowienie" />
+            </Principal>
+            <Dependent Role="TortZamowienie">
+              <PropertyRef Name="idZamowienie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="sweetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoleClaims" EntityType="Self.AspNetRoleClaims" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="AspNetUserTokens" EntityType="Self.AspNetUserTokens" />
+          <EntitySet Name="Biszkopt" EntityType="Self.Biszkopt" />
+          <EntitySet Name="BiszkoptTortu" EntityType="Self.BiszkoptTortu" />
+          <EntitySet Name="Dostawa" EntityType="Self.Dostawa" />
+          <EntitySet Name="DostawaDoKlienta" EntityType="Self.DostawaDoKlienta" />
+          <EntitySet Name="DostawaDoPkt" EntityType="Self.DostawaDoPkt" />
+          <EntitySet Name="FormaPlatnosci" EntityType="Self.FormaPlatnosci" />
+          <EntitySet Name="FormaZaliczki" EntityType="Self.FormaZaliczki" />
+          <EntitySet Name="Klient" EntityType="Self.Klient" />
+          <EntitySet Name="KlientJopia" EntityType="Self.KlientJopia" />
+          <EntitySet Name="Krem" EntityType="Self.Krem" />
+          <EntitySet Name="KremTortu" EntityType="Self.KremTortu" />
+          <EntitySet Name="Ksztalt" EntityType="Self.Ksztalt" />
+          <EntitySet Name="Login" EntityType="Self.Login" />
+          <EntitySet Name="Logowanie" EntityType="Self.Logowanie" />
+          <EntitySet Name="NazwaStylu" EntityType="Self.NazwaStylu" />
+          <EntitySet Name="Pietra" EntityType="Self.Pietra" />
+          <EntitySet Name="PietraTortu" EntityType="Self.PietraTortu" />
+          <EntitySet Name="Platnosc" EntityType="Self.Platnosc" />
+          <EntitySet Name="Praca" EntityType="Self.Praca" />
+          <EntitySet Name="RodzajBiszkoptu" EntityType="Self.RodzajBiszkoptu" />
+          <EntitySet Name="RodzajKremu" EntityType="Self.RodzajKremu" />
+          <EntitySet Name="RodzajKsztaltu" EntityType="Self.RodzajKsztaltu" />
+          <EntitySet Name="RodzajRozmiaru" EntityType="Self.RodzajRozmiaru" />
+          <EntitySet Name="RodzajTortu" EntityType="Self.RodzajTortu" />
+          <EntitySet Name="Rozmiar" EntityType="Self.Rozmiar" />
+          <EntitySet Name="SmakSet" EntityType="Self.Smak" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Torty" EntityType="Self.Torty" />
+          <EntitySet Name="TortZamowienie" EntityType="Self.TortZamowienie" />
+          <EntitySet Name="Zamowienie" EntityType="Self.Zamowienie" />
+          <AssociationSet Name="FK_AspNetRoleClaims_AspNetRoles_RoleId" Association="Self.FK_AspNetRoleClaims_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetRoleClaims" EntitySet="AspNetRoleClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserLogins_AspNetUsers_UserId" Association="Self.FK_AspNetUserLogins_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserTokens_AspNetUsers_UserId" Association="Self.FK_AspNetUserTokens_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserTokens" EntitySet="AspNetUserTokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_AspNetUsers" Association="Self.FK_Zamowienie_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biszkopt_Pietra" Association="Self.FK_Biszkopt_Pietra">
+            <End Role="Pietra" EntitySet="Pietra" />
+            <End Role="Biszkopt" EntitySet="Biszkopt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Biszkopt_RodzajBiszkoptu" Association="Self.FK_Biszkopt_RodzajBiszkoptu">
+            <End Role="RodzajBiszkoptu" EntitySet="RodzajBiszkoptu" />
+            <End Role="Biszkopt" EntitySet="Biszkopt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Dostawa1" Association="Self.FK_Zamowienie_Dostawa1">
+            <End Role="Dostawa" EntitySet="Dostawa" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_DostawaDoKlienta" Association="Self.FK_Zamowienie_DostawaDoKlienta">
+            <End Role="DostawaDoKlienta" EntitySet="DostawaDoKlienta" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_DostawaDoPkt" Association="Self.FK_Zamowienie_DostawaDoPkt">
+            <End Role="DostawaDoPkt" EntitySet="DostawaDoPkt" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Platnosc_FormaPlatnosci" Association="Self.FK_Platnosc_FormaPlatnosci">
+            <End Role="FormaPlatnosci" EntitySet="FormaPlatnosci" />
+            <End Role="Platnosc" EntitySet="Platnosc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Platnosc_FormaZaliczki" Association="Self.FK_Platnosc_FormaZaliczki">
+            <End Role="FormaZaliczki" EntitySet="FormaZaliczki" />
+            <End Role="Platnosc" EntitySet="Platnosc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Klient" Association="Self.FK_Zamowienie_Klient">
+            <End Role="Klient" EntitySet="Klient" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Torty_NazwaStylu" Association="Self.FK_Torty_NazwaStylu">
+            <End Role="NazwaStylu" EntitySet="NazwaStylu" />
+            <End Role="Torty" EntitySet="Torty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajKremu" Association="Self.FK_Pietra_RodzajKremu">
+            <End Role="RodzajKremu" EntitySet="RodzajKremu" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajKsztaltu" Association="Self.FK_Pietra_RodzajKsztaltu">
+            <End Role="RodzajKsztaltu" EntitySet="RodzajKsztaltu" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pietra_RodzajRozmiaru" Association="Self.FK_Pietra_RodzajRozmiaru">
+            <End Role="RodzajRozmiaru" EntitySet="RodzajRozmiaru" />
+            <End Role="Pietra" EntitySet="Pietra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Zamowienie_Platnosc" Association="Self.FK_Zamowienie_Platnosc">
+            <End Role="Platnosc" EntitySet="Platnosc" />
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciasta_RodzajCiasta" Association="Self.FK_Ciasta_RodzajCiasta">
+            <End Role="RodzajTortu" EntitySet="RodzajTortu" />
+            <End Role="Torty" EntitySet="Torty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TortZamowienie_Torty" Association="Self.FK_TortZamowienie_Torty">
+            <End Role="Torty" EntitySet="Torty" />
+            <End Role="TortZamowienie" EntitySet="TortZamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TortZamowienie_Zamowienie" Association="Self.FK_TortZamowienie_Zamowienie">
+            <End Role="Zamowienie" EntitySet="Zamowienie" />
+            <End Role="TortZamowienie" EntitySet="TortZamowienie" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sweetModelStoreContainer" CdmEntityContainer="sweetEntities">
+          <EntitySetMapping Name="AspNetRoleClaims">
+            <EntityTypeMapping TypeName="sweetModel.AspNetRoleClaims">
+              <MappingFragment StoreEntitySet="AspNetRoleClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="sweetModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NormalizedName" ColumnName="NormalizedName" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="sweetModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="sweetModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="ProviderDisplayName" ColumnName="ProviderDisplayName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="sweetModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="NormalizedUserName" ColumnName="NormalizedUserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NormalizedEmail" ColumnName="NormalizedEmail" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="ConcurrencyStamp" ColumnName="ConcurrencyStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEnd" ColumnName="LockoutEnd" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserImie" ColumnName="UserImie" />
+                <ScalarProperty Name="UserNazwisko" ColumnName="UserNazwisko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserTokens">
+            <EntityTypeMapping TypeName="sweetModel.AspNetUserTokens">
+              <MappingFragment StoreEntitySet="AspNetUserTokens">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Biszkopt">
+            <EntityTypeMapping TypeName="sweetModel.Biszkopt">
+              <MappingFragment StoreEntitySet="Biszkopt">
+                <ScalarProperty Name="idBiszkopt" ColumnName="idBiszkopt" />
+                <ScalarProperty Name="idRodzajBiszkoptu" ColumnName="idRodzajBiszkoptu" />
+                <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiszkoptTortu">
+            <EntityTypeMapping TypeName="sweetModel.BiszkoptTortu">
+              <MappingFragment StoreEntitySet="BiszkoptTortu">
+                <ScalarProperty Name="idBiszkopt" ColumnName="idBiszkopt" />
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+                <ScalarProperty Name="idBiszkoptTortu" ColumnName="idBiszkoptTortu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dostawa">
+            <EntityTypeMapping TypeName="sweetModel.Dostawa">
+              <MappingFragment StoreEntitySet="Dostawa">
+                <ScalarProperty Name="idDostawa" ColumnName="idDostawa" />
+                <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+                <ScalarProperty Name="GodzinaOdbioru" ColumnName="GodzinaOdbioru" />
+                <ScalarProperty Name="NrTeleOdbiorcy" ColumnName="NrTeleOdbiorcy" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="NrDomu" ColumnName="NrDomu" />
+                <ScalarProperty Name="NrMieszkania" ColumnName="NrMieszkania" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DostawaDoKlienta">
+            <EntityTypeMapping TypeName="sweetModel.DostawaDoKlienta">
+              <MappingFragment StoreEntitySet="DostawaDoKlienta">
+                <ScalarProperty Name="idDostawaDoKlienta" ColumnName="idDostawaDoKlienta" />
+                <ScalarProperty Name="NazwaKlienta" ColumnName="NazwaKlienta" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="TelefonKontaktowy" ColumnName="TelefonKontaktowy" />
+                <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+                <ScalarProperty Name="GodzinaOdbioru" ColumnName="GodzinaOdbioru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DostawaDoPkt">
+            <EntityTypeMapping TypeName="sweetModel.DostawaDoPkt">
+              <MappingFragment StoreEntitySet="DostawaDoPkt">
+                <ScalarProperty Name="idDostawaDoPkt" ColumnName="idDostawaDoPkt" />
+                <ScalarProperty Name="ulica" ColumnName="ulica" />
+                <ScalarProperty Name="nrdomu" ColumnName="nrdomu" />
+                <ScalarProperty Name="nrmieszkania" ColumnName="nrmieszkania" />
+                <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
+                <ScalarProperty Name="nrtelefonu" ColumnName="nrtelefonu" />
+                <ScalarProperty Name="godzinyotwarcia" ColumnName="godzinyotwarcia" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="kodpocztowy" ColumnName="kodpocztowy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaPlatnosci">
+            <EntityTypeMapping TypeName="sweetModel.FormaPlatnosci">
+              <MappingFragment StoreEntitySet="FormaPlatnosci">
+                <ScalarProperty Name="idFormaPlatnosci" ColumnName="idFormaPlatnosci" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaZaliczki">
+            <EntityTypeMapping TypeName="sweetModel.FormaZaliczki">
+              <MappingFragment StoreEntitySet="FormaZaliczki">
+                <ScalarProperty Name="idFormaZaliczki" ColumnName="idFormaZaliczki" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klient">
+            <EntityTypeMapping TypeName="sweetModel.Klient">
+              <MappingFragment StoreEntitySet="Klient">
+                <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+                <ScalarProperty Name="NazwaFirmy" ColumnName="NazwaFirmy" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+                <ScalarProperty Name="NiP" ColumnName="NiP" />
+                <ScalarProperty Name="Osoba" ColumnName="Osoba" />
+                <ScalarProperty Name="NrTelefonuOsoby" ColumnName="NrTelefonuOsoby" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="TypKlienta" ColumnName="TypKlienta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KlientJopia">
+            <EntityTypeMapping TypeName="sweetModel.KlientJopia">
+              <MappingFragment StoreEntitySet="KlientJopia">
+                <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NrTelefonu" ColumnName="NrTelefonu" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Numer" ColumnName="Numer" />
+                <ScalarProperty Name="KodPocztowy" ColumnName="KodPocztowy" />
+                <ScalarProperty Name="MIasto" ColumnName="MIasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Krem">
+            <EntityTypeMapping TypeName="sweetModel.Krem">
+              <MappingFragment StoreEntitySet="Krem">
+                <ScalarProperty Name="idKrem" ColumnName="idKrem" />
+                <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+                <ScalarProperty Name="idRodzajuKremu" ColumnName="idRodzajuKremu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KremTortu">
+            <EntityTypeMapping TypeName="sweetModel.KremTortu">
+              <MappingFragment StoreEntitySet="KremTortu">
+                <ScalarProperty Name="idKrem" ColumnName="idKrem" />
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+                <ScalarProperty Name="idKremTortu" ColumnName="idKremTortu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ksztalt">
+            <EntityTypeMapping TypeName="sweetModel.Ksztalt">
+              <MappingFragment StoreEntitySet="Ksztalt">
+                <ScalarProperty Name="idKsztalt" ColumnName="idKsztalt" />
+                <ScalarProperty Name="NazwaKsztaltu" ColumnName="NazwaKsztaltu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login">
+            <EntityTypeMapping TypeName="sweetModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="idLogin" ColumnName="idLogin" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RememberMe" ColumnName="RememberMe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logowanie">
+            <EntityTypeMapping TypeName="sweetModel.Logowanie">
+              <MappingFragment StoreEntitySet="Logowanie">
+                <ScalarProperty Name="idLogowanie" ColumnName="idLogowanie" />
+                <ScalarProperty Name="NazwaUzytkownika" ColumnName="NazwaUzytkownika" />
+                <ScalarProperty Name="Haslo" ColumnName="Haslo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NazwaStylu">
+            <EntityTypeMapping TypeName="sweetModel.NazwaStylu">
+              <MappingFragment StoreEntitySet="NazwaStylu">
+                <ScalarProperty Name="idStylTortu" ColumnName="idStylTortu" />
+                <ScalarProperty Name="NazwaStylu1" ColumnName="NazwaStylu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pietra">
+            <EntityTypeMapping TypeName="sweetModel.Pietra">
+              <MappingFragment StoreEntitySet="Pietra">
+                <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+                <ScalarProperty Name="idSmak" ColumnName="idSmak" />
+                <ScalarProperty Name="NrPietra" ColumnName="NrPietra" />
+                <ScalarProperty Name="idRodzajBiszkopt" ColumnName="idRodzajBiszkopt" />
+                <ScalarProperty Name="idRodzajKsztaltu" ColumnName="idRodzajKsztaltu" />
+                <ScalarProperty Name="idRodzajRozmiaru" ColumnName="idRodzajRozmiaru" />
+                <ScalarProperty Name="Dodatki" ColumnName="Dodatki" />
+                <ScalarProperty Name="Uwaga" ColumnName="Uwaga" />
+                <ScalarProperty Name="idRodzajKremu" ColumnName="idRodzajKremu" />
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PietraTortu">
+            <EntityTypeMapping TypeName="sweetModel.PietraTortu">
+              <MappingFragment StoreEntitySet="PietraTortu">
+                <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+                <ScalarProperty Name="idPietraTorty" ColumnName="idPietraTorty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Platnosc">
+            <EntityTypeMapping TypeName="sweetModel.Platnosc">
+              <MappingFragment StoreEntitySet="Platnosc">
+                <ScalarProperty Name="idPlatnosc" ColumnName="idPlatnosc" />
+                <ScalarProperty Name="KosztTotal" ColumnName="KosztTotal" />
+                <ScalarProperty Name="Zaliczka" ColumnName="Zaliczka" />
+                <ScalarProperty Name="PotwierdzenieZaliczki" ColumnName="PotwierdzenieZaliczki" />
+                <ScalarProperty Name="idFormaZaliczki" ColumnName="idFormaZaliczki" />
+                <ScalarProperty Name="idFormaPlatnosci" ColumnName="idFormaPlatnosci" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Praca">
+            <EntityTypeMapping TypeName="sweetModel.Praca">
+              <MappingFragment StoreEntitySet="Praca">
+                <ScalarProperty Name="idPraca" ColumnName="idPraca" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="rodzaj" ColumnName="rodzaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajBiszkoptu">
+            <EntityTypeMapping TypeName="sweetModel.RodzajBiszkoptu">
+              <MappingFragment StoreEntitySet="RodzajBiszkoptu">
+                <ScalarProperty Name="idRodzajBiszkoptu" ColumnName="idRodzajBiszkoptu" />
+                <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajKremu">
+            <EntityTypeMapping TypeName="sweetModel.RodzajKremu">
+              <MappingFragment StoreEntitySet="RodzajKremu">
+                <ScalarProperty Name="idRodzajKremu" ColumnName="idRodzajKremu" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajKsztaltu">
+            <EntityTypeMapping TypeName="sweetModel.RodzajKsztaltu">
+              <MappingFragment StoreEntitySet="RodzajKsztaltu">
+                <ScalarProperty Name="idRodzajKsztaltu" ColumnName="idRodzajKsztaltu" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajRozmiaru">
+            <EntityTypeMapping TypeName="sweetModel.RodzajRozmiaru">
+              <MappingFragment StoreEntitySet="RodzajRozmiaru">
+                <ScalarProperty Name="idRodzajRozmiaru" ColumnName="idRodzajRozmiaru" />
+                <ScalarProperty Name="liczba" ColumnName="liczba" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RodzajTortu">
+            <EntityTypeMapping TypeName="sweetModel.RodzajTortu">
+              <MappingFragment StoreEntitySet="RodzajTortu">
+                <ScalarProperty Name="idRodzajTortu" ColumnName="idRodzajTortu" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rozmiar">
+            <EntityTypeMapping TypeName="sweetModel.Rozmiar">
+              <MappingFragment StoreEntitySet="Rozmiar">
+                <ScalarProperty Name="idRozmiar" ColumnName="idRozmiar" />
+                <ScalarProperty Name="NazwaRozmiaru" ColumnName="NazwaRozmiaru" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmakSet">
+            <EntityTypeMapping TypeName="sweetModel.Smak">
+              <MappingFragment StoreEntitySet="Smak">
+                <ScalarProperty Name="idSmak" ColumnName="idSmak" />
+                <ScalarProperty Name="NazwaSmaku" ColumnName="NazwaSmaku" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="sweetModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Torty">
+            <EntityTypeMapping TypeName="sweetModel.Torty">
+              <MappingFragment StoreEntitySet="Torty">
+                <ScalarProperty Name="idRodzajTortu" ColumnName="idRodzajTortu" />
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+                <ScalarProperty Name="GotowoscTortu" ColumnName="GotowoscTortu" />
+                <ScalarProperty Name="idStylTortu" ColumnName="idStylTortu" />
+                <ScalarProperty Name="NapisNa" ColumnName="NapisNa" />
+                <ScalarProperty Name="Zdjecie" ColumnName="Zdjecie" />
+                <ScalarProperty Name="idPietra" ColumnName="idPietra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TortZamowienie">
+            <EntityTypeMapping TypeName="sweetModel.TortZamowienie">
+              <MappingFragment StoreEntitySet="TortZamowienie">
+                <ScalarProperty Name="idTorty" ColumnName="idTorty" />
+                <ScalarProperty Name="idZamowienie" ColumnName="idZamowienie" />
+                <ScalarProperty Name="idTortZamowienie" ColumnName="idTortZamowienie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zamowienie">
+            <EntityTypeMapping TypeName="sweetModel.Zamowienie">
+              <MappingFragment StoreEntitySet="Zamowienie">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="idZamowienie" ColumnName="idZamowienie" />
+                <ScalarProperty Name="PotwOdbioru" ColumnName="PotwOdbioru" />
+                <ScalarProperty Name="ZlecenieRozliczenie" ColumnName="ZlecenieRozliczenie" />
+                <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+                <ScalarProperty Name="PracPrzyjZam" ColumnName="PracPrzyjZam" />
+                <ScalarProperty Name="idDostawa" ColumnName="idDostawa" />
+                <ScalarProperty Name="idKlient" ColumnName="idKlient" />
+                <ScalarProperty Name="PracWykonalZam" ColumnName="PracWykonalZam" />
+                <ScalarProperty Name="PracWydalZam" ColumnName="PracWydalZam" />
+                <ScalarProperty Name="idDostawaDoPkt" ColumnName="idDostawaDoPkt" />
+                <ScalarProperty Name="idPlatnosci" ColumnName="idPlatnosci" />
+                <ScalarProperty Name="idDostawaDoKlienta" ColumnName="idDostawaDoKlienta" />
+                <ScalarProperty Name="DataOdbioru" ColumnName="DataOdbioru" />
+                <ScalarProperty Name="DataZamowienia" ColumnName="DataZamowienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="sweetModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

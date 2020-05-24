@@ -1,0 +1,14 @@
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\KlaudiaPoliwka.exe.config
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\KlaudiaPoliwka.exe
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\KlaudiaPoliwka.pdb
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\EntityFramework.dll
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\EntityFramework.xml
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.csprojAssemblyReference.cache
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.Form1.resources
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.Properties.Resources.resources
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.csproj.GenerateResource.cache
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.csproj.CopyComplete
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.exe
+C:\Users\Klaudia\Desktop\KlaudiaPoliwka\KlaudiaPoliwka\obj\Debug\KlaudiaPoliwka.pdb

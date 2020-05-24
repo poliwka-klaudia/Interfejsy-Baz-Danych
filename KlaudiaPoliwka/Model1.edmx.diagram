@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69e2b86a4f4e46b0b1ae8e682c15af56" Name="Diagram1">
+        <EntityTypeShape EntityType="sweetModel.AspNetRoleClaims" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.AspNetUsers" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.AspNetUserTokens" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Biszkopt" Width="1.5" PointX="13.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.BiszkoptTortu" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Dostawa" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.DostawaDoKlienta" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.DostawaDoPkt" Width="1.5" PointX="6" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.FormaPlatnosci" Width="1.5" PointX="3.75" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.FormaZaliczki" Width="1.5" PointX="3.75" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Klient" Width="1.5" PointX="6" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.KlientJopia" Width="1.5" PointX="2.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Krem" Width="1.5" PointX="12.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.KremTortu" Width="1.5" PointX="12.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Ksztalt" Width="1.5" PointX="13.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Login" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Logowanie" Width="1.5" PointX="14.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.NazwaStylu" Width="1.5" PointX="6" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Pietra" Width="1.5" PointX="11" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.PietraTortu" Width="1.5" PointX="8.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Platnosc" Width="1.5" PointX="6" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Praca" Width="1.5" PointX="14.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.RodzajBiszkoptu" Width="1.5" PointX="11" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.RodzajKremu" Width="1.5" PointX="8.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.RodzajKsztaltu" Width="1.5" PointX="8.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.RodzajRozmiaru" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.RodzajTortu" Width="1.5" PointX="6" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Rozmiar" Width="1.5" PointX="10.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Smak" Width="1.5" PointX="12.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.sysdiagrams" Width="1.5" PointX="14.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Torty" Width="1.5" PointX="8.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.TortZamowienie" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sweetModel.Zamowienie" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="sweetModel.FK_AspNetRoleClaims_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_AspNetUserClaims_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_AspNetUserLogins_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_AspNetUserTokens_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Biszkopt_Pietra" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Biszkopt_RodzajBiszkoptu" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_Dostawa1" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_DostawaDoKlienta" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_DostawaDoPkt" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Platnosc_FormaPlatnosci" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Platnosc_FormaZaliczki" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_Klient" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Torty_NazwaStylu" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Pietra_RodzajKremu" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Pietra_RodzajKsztaltu" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Pietra_RodzajRozmiaru" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Zamowienie_Platnosc" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_Ciasta_RodzajCiasta" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_TortZamowienie_Torty" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.FK_TortZamowienie_Zamowienie" ManuallyRouted="false" />
+        <AssociationConnector Association="sweetModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
